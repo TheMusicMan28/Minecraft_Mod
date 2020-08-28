@@ -14,6 +14,7 @@ public class Lemon
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    public static final String MOD_ID = "lemons4me";
 
     public Lemon() {
         // Register the setup method for modloading
