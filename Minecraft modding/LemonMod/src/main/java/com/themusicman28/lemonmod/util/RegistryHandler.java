@@ -1,6 +1,8 @@
 package com.themusicman28.lemonmod.util;
 
 import com.themusicman28.lemonmod.Lemon;
+import com.themusicman28.lemonmod.blocks.BlockItemBase;
+import com.themusicman28.lemonmod.blocks.BlockOfLemon;
 import com.themusicman28.lemonmod.items.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -26,5 +28,5 @@ public class RegistryHandler {
     public static final RegistryObject<Block> BLOCK_OF_LEMON = BLOCKS.register("block_of_lemon", BlockOfLemon::new);
 
     // Block Items
-
+    public static final RegistryObject<Item> BLOCK_OF_LEMON_ITEM = ITEMS.register("block_of_lemon", () -> new BlockItemBase(BLOCK_OF_LEMON.get()));
 }
