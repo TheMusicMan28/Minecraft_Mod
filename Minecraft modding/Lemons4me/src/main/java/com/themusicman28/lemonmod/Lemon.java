@@ -1,5 +1,8 @@
 package com.themusicman28.lemonmod;
 
+import com.themusicman28.lemonmod.util.RegistryHandler;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -19,9 +22,10 @@ public class Lemon
     public Lemon() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+
+        RegistryHandler.init();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -32,4 +36,12 @@ public class Lemon
 
     private void doClientStuff(final FMLClientSetupEvent event) {
     }
+
+    public static final ItemGroup  TAB = new ItemGroup("lemonTab"){
+
+        @Override
+        public ItemStack createIcon(){
+            return new ItemStack(RegistryHandler.LEMON.get());
+        }
+    };
 }
