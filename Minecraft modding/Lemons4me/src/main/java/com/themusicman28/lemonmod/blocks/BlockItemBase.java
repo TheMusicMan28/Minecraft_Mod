@@ -1,0 +1,14 @@
+package com.themusicman28.lemonmod.blocks;
+
+import com.themusicman28.lemonmod.Lemon;
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+
+public class BlockItemBase extends BlockItem {
+
+
+    public BlockItemBase(Block block) {
+        super(block, new Item.Properties().group(Lemon.TAB));
+    }
+}
